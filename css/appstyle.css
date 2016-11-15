@@ -1,0 +1,103 @@
+html, body {  /* Select and size the outermost elements so other elements can be set in % */
+	height:100%;
+	width:99%;
+}
+
+header {
+  font: 24px Tahoma;
+  text-align: center;
+  color: white;
+}
+
+body {
+   font: 16px Helvetica;
+   background-color: black;
+  }
+
+
+  #main {  /* select element with id="main" */ 
+   min-height: 70%;
+   max-height: 70%;
+   height: 85%;
+   width: 85%;
+   margin: 50px;
+   padding: 5px;
+   display:  flex;
+   flex-flow: row;
+   overflow: hidden;
+   }
+
+
+  #main > #centerDiv {
+   margin: 4px;
+   padding: 5px;
+   border: 1px solid #000000;
+   border-radius: 7pt;
+   background: #021631;
+   background-image: url("../resources/galaxybg.jpg");
+   background-repeat: repeat;
+   background-position: center;
+   /*background-size: 100%;*/
+   flex: 3 1 50%;
+   order: 2;
+   /*overflow: scroll;*/
+   text-align: center;
+   width:797px;
+   height:540px;
+   }
+
+   #container {
+   margin: 4px;
+   padding: 5px;
+   border: 1px solid #000;
+   border-radius: 7pt;
+   background: #021631;
+           flex: 1 6 15%;
+           order: 3;
+   position: relative;
+
+   }
+
+   #side {
+    position:absolute;
+    height:900px;
+    width:500px;
+    overflow:auto;
+   }
+
+ 
+  header, footer {  /* select all header and footer elements */
+   display: block;
+   margin: 4px;
+   padding: 5px;
+   min-height: 10%;
+   border: 1px solid #000;
+   border-radius: 7pt;
+   background: #000000;
+   text-align: center;
+   }
+
+  footer {    /* override these attributes just for the footer elements */
+   font-size: 10pt;
+   color: grey;
+   text-align: left;
+   }
+
+
+ 
+  /* Changes layout under these conditions : Too narrow to support three columns */
+  /* "at-rules" using the '@' sign is an "advanced" feature */ 
+  @media all and (max-width: 640px) {
+  
+   #main, #page {
+    flex-flow: column;
+    flex-direction: column;
+   }
+
+    #main > , header, footer {
+    min-height: 50px;
+    max-height: 50px;
+   }
+  
+};
+
